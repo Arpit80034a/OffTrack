@@ -1,9 +1,21 @@
 class PreferenceModel {
+  
+  // Unique identifier for the preference (optional)
   final String? preferenceId;
+  
+  // ID of the user to whom these preferences belong
   final String userId;
+  
+  // User's preferred work start time
   final String workStartTime;
+  
+  // User's preferred work end time
   final String workEndTime;
+  
+  // Break duration in minutes between tasks
   final int breakDuration;
+  
+  // Focus level preference (e.g. low, medium, high)
   final String focusLevel;
 
   PreferenceModel({
@@ -15,6 +27,7 @@ class PreferenceModel {
     this.focusLevel = 'medium',
   });
 
+  // Factory constructor to create PreferenceModel from JSON data
   factory PreferenceModel.fromJson(Map<String, dynamic> json) {
     return PreferenceModel(
       preferenceId: json['preference_id'],
@@ -26,6 +39,7 @@ class PreferenceModel {
     );
   }
 
+  // Convert PreferenceModel object to JSON 
   Map<String, dynamic> toJson() => {
     'work_start_time': workStartTime,
     'work_end_time': workEndTime,
