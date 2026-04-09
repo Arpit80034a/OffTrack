@@ -92,17 +92,18 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                   ShaderMask(
                     shaderCallback: (bounds) => AppTheme.primaryGradient.createShader(bounds),
                     child: const Text(
-                      'Schedule Manager',
+                      'OFFTRACK',
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        letterSpacing: 3,
                       ),
                     ),
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'AI-Powered Scheduling',
+                    'Get Back on Track',
                     style: TextStyle(
                       fontSize: 14,
                       color: AppTheme.textSecondary.withValues(alpha: 0.7),

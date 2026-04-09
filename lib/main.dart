@@ -27,9 +27,9 @@ class ScheduleManagerApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AuthService(),
       child: MaterialApp(
-        title: 'Intelligent Schedule Manager',
+        title: 'OFFTRACK',
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.darkTheme,
+        theme: AppTheme.lightTheme,
         initialRoute: '/',
         routes: {
           '/': (context) => const SplashScreen(),

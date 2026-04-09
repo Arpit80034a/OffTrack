@@ -133,12 +133,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   children: [
                     _buildTimePicker('Work Start', _workStart, (val) => setState(() => _workStart = val)),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 24),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 24),
                     _buildTimePicker('Work End', _workEnd, (val) => setState(() => _workEnd = val)),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 24),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 24),
                     _buildSliderRow('Break Duration', '$_breakDuration min',
                         _breakDuration.toDouble(), 5, 60, (v) => setState(() => _breakDuration = v.round())),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 24),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 24),
                     _buildFocusLevel(),
                   ],
                 ),
@@ -179,7 +179,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ],
                       );
                     }),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 1),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 1),
                     _buildMenuItem(Icons.description_outlined, 'Terms & Conditions', () {
                       showDialog(
                         context: context,
@@ -194,7 +194,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       );
                     }),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 1),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 1),
                     _buildMenuItem(Icons.privacy_tip_outlined, 'Privacy Policy', () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Privacy Policy page coming soon')),

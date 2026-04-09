@@ -155,7 +155,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                     gradient: LinearGradient(
                                       colors: [
                                         color.withValues(alpha: 0.08),
-                                        Colors.white.withValues(alpha: 0.03),
+                                        AppTheme.background,
                                       ],
                                     ),
                                     borderRadius: BorderRadius.circular(16),

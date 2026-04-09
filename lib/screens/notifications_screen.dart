@@ -60,10 +60,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   children: [
                     _buildToggle('Task Reminders', 'Get notified before task deadlines',
                         Icons.task_alt_rounded, _taskReminders, (v) => setState(() => _taskReminders = v)),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 1),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 1),
                     _buildToggle('Schedule Alerts', 'Daily schedule notifications',
                         Icons.schedule_rounded, _scheduleAlerts, (v) => setState(() => _scheduleAlerts = v)),
-                    Divider(color: Colors.white.withValues(alpha: 0.05), height: 1),
+                    Divider(color: AppTheme.textSecondary.withValues(alpha: 0.15), height: 1),
                     _buildToggle('Habit Reminders', 'Remind to complete daily habits',
                         Icons.psychology_rounded, _habitReminders, (v) => setState(() => _habitReminders = v)),
                   ],
@@ -98,11 +98,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       margin: const EdgeInsets.only(bottom: 10),
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.05),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
                           color: n.delivered
-                              ? Colors.white.withValues(alpha: 0.05)
+                              ? const Color(0xFFE8ECF4)
                               : AppTheme.primary.withValues(alpha: 0.2),
                         ),
                       ),

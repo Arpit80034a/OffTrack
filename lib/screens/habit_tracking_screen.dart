@@ -204,12 +204,12 @@ class _HabitTrackingScreenState extends State<HabitTrackingScreen> {
                                   margin: const EdgeInsets.only(bottom: 12),
                                   padding: const EdgeInsets.all(16),
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withValues(alpha: 0.05),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(16),
                                     border: Border.all(
                                       color: habit.isCompletedToday
                                           ? AppTheme.success.withValues(alpha: 0.3)
-                                          : Colors.white.withValues(alpha: 0.08),
+                                          : const Color(0xFFE8ECF4),
                                     ),
                                   ),
                                   child: Row(
@@ -226,7 +226,7 @@ class _HabitTrackingScreenState extends State<HabitTrackingScreen> {
                                                 : AppTheme.surfaceLight,
                                             borderRadius: BorderRadius.circular(14),
                                             border: Border.all(
-                                              color: habit.isCompletedToday ? AppTheme.success : Colors.white.withValues(alpha: 0.1),
+                                              color: habit.isCompletedToday ? AppTheme.success : const Color(0xFFE8ECF4),
                                             ),
                                           ),
                                           child: Icon(

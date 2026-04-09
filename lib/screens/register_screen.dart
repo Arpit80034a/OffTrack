@@ -85,23 +85,24 @@ class _RegisterScreenState extends State<RegisterScreen> with SingleTickerProvid
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        width: 80,
-                        height: 80,
+                        width: 90,
+                        height: 90,
                         decoration: BoxDecoration(
-                          gradient: AppTheme.primaryGradient,
-                          borderRadius: BorderRadius.circular(22),
+                          shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: AppTheme.primary.withValues(alpha: 0.3),
+                              color: AppTheme.primary.withValues(alpha: 0.2),
                               blurRadius: 20,
                             ),
                           ],
                         ),
-                        child: const Icon(Icons.person_add_rounded, size: 40, color: Colors.white),
+                        child: ClipOval(
+                          child: Image.asset('assets/images/offtrack_logo.png', fit: BoxFit.cover),
+                        ),
                       ),
                       const SizedBox(height: 24),
-                      const Text('Create Account',
-                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
+                      const Text('Join OFFTRACK',
+                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppTheme.textPrimary, letterSpacing: 1)),
                       const SizedBox(height: 8),
                       const Text('Start managing your schedule',
                           style: TextStyle(color: AppTheme.textSecondary, fontSize: 15)),

@@ -147,7 +147,7 @@ class _TaskManagementScreenState extends State<TaskManagementScreen> {
                     decoration: BoxDecoration(
                       color: AppTheme.surfaceLight,
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                      border: Border.all(color: const Color(0xFFE8ECF4)),
                     ),
                     child: Row(
                       children: [
@@ -259,9 +259,9 @@ class _TaskManagementScreenState extends State<TaskManagementScreen> {
                               margin: const EdgeInsets.only(bottom: 12),
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.05),
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(16),
-                                border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                                border: Border.all(color: const Color(0xFFE8ECF4)),
                               ),
                               child: Row(
                                 children: [

@@ -1,9 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from scheduler import generate_optimized_schedule
+
+try:
+    from scheduler import generate_optimized_schedule
+except ImportError as e:
+    print(f'⚠️  Failed to import scheduler module: {e}')
+    print('   Make sure scheduler.py is in the same directory as app.py')
+    generate_optimized_schedule = None
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 @app.route('/', methods=['GET'])
@@ -12,8 +18,15 @@ def health():
     return jsonify({
         'service': 'Intelligent Schedule Manager - AI Engine',
         'version': '1.0.0',
-        'status': 'running'
+        'status': 'running',
+        'scheduler_available': generate_optimized_schedule is not None,
     })
+
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Dedicated health check endpoint."""
+    return jsonify({'status': 'ok'})
 
 
 @app.route('/generate-schedule', methods=['POST'])
@@ -32,6 +45,9 @@ def generate_schedule():
         }
     }
     """
+    if generate_optimized_schedule is None:
+        return jsonify({'error': 'Scheduler module not available'}), 503
+
     try:
         data = request.get_json()
         if not data:
