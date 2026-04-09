@@ -1,9 +1,20 @@
 class HabitModel {
+  // Unique identifier for the habit
   final String habitId;
+
+  // ID of the user who owns this habit
   final String userId;
+
+  // Name/Title of the habit
   final String name;
+
+  // Frequency of the habit
   final String frequency;
+
+  // Current streak count
   final int streak;
+
+  // Last date when the habit was completed
   final String? lastCompletedDate;
 
   HabitModel({
@@ -15,6 +26,7 @@ class HabitModel {
     this.lastCompletedDate,
   });
 
+  // Factory constructor to create object from JSON
   factory HabitModel.fromJson(Map<String, dynamic> json) {
     return HabitModel(
       habitId: json['habit_id'] ?? '',
@@ -26,11 +38,13 @@ class HabitModel {
     );
   }
 
+  // Convert object to JSON
   Map<String, dynamic> toJson() => {
     'name': name,
     'frequency': frequency,
   };
 
+  // Check if habit is completed today
   bool get isCompletedToday {
     if (lastCompletedDate == null) return false;
     final now = DateTime.now();
